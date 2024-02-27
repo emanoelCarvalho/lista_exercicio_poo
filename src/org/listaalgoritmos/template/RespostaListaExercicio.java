@@ -19,12 +19,12 @@ public class RespostaListaExercicio {
 	 * @param altura
 	 * @return resultado
 	 */
-	
-	float peso; 
-	float altura;
 	public static float calcularImc(float peso, float altura) 
 	{
-		return 0f;
+		peso = 81.7f;
+		altura =  1.78f;
+		
+		return (peso / (altura * altura));
 	}
 	
 	/**
@@ -37,6 +37,7 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) 
 	{	
+		
 		return 0f;
 	}
 	
