@@ -19,6 +19,9 @@ public class RespostaListaExercicio {
 	 * @param altura
 	 * @return resultado
 	 */
+	
+	float peso; 
+	float altura;
 	public static float calcularImc(float peso, float altura) 
 	{
 		return 0f;
