@@ -2,6 +2,8 @@ package org.listaalgoritmos.template;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
+
 public class RespostaListaExercicio {
 	
 	/*
@@ -9,7 +11,7 @@ public class RespostaListaExercicio {
 	 * Não se faz necessário implementar dentro do escopo do método.
 	 */
 	public static void main(String[] args) {
-		int[] a = {1,2,3};
+		int[] a = {5,4,3};
 		imprimirArrayInverso(a);
 	}
 	
@@ -21,11 +23,9 @@ public class RespostaListaExercicio {
 	 * @return resultado
 	 */
 	public static float calcularImc(float peso, float altura) 
-	{
-		float imc;
-		
-		imc = (peso / (altura * altura));
-		return imc;
+	{	
+		float resultado = (peso / (altura * altura));
+		return resultado;
 	}
 	
 	/**
@@ -104,7 +104,7 @@ public class RespostaListaExercicio {
 			System.out.print(array[i]); 
 			
 			if (i > 0) {
-				System.out.print(", ");
+				System.out.print(",");
 			}
 		}
 	}
@@ -173,7 +173,18 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirMaiorMenorElemento(int[] array) 
 	{
-		System.out.print("");
+		int maior = array[0];
+		int menor = array[0];
+		
+		for (int i = 1; i < array.length; i++ ) {
+			if (array[i] > maior) {
+				maior = array[i];
+			}
+			if (array[i] < menor) {
+				menor = array[i];
+			}
+		}
+		System.out.print(maior + " " + menor + " ");
 	}
 	
 	/**
@@ -184,7 +195,14 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularMediaAritmetica(int[] array) 
 	{
-		return 0f;
+		int sum = 0;
+		int media = 0; 
+		
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		media = sum / array.length;
+		return media;
 	}
 	
 }
