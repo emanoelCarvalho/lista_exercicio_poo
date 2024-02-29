@@ -1,6 +1,6 @@
 package org.listaalgoritmos.template;
 
-
+import static org.junit.Assert.assertTrue;
 
 public class RespostaListaExercicio {
 	
@@ -9,7 +9,8 @@ public class RespostaListaExercicio {
 	 * Não se faz necessário implementar dentro do escopo do método.
 	 */
 	public static void main(String[] args) {
-		
+		int[] a = {1,2,3};
+		imprimirArrayInverso(a);
 	}
 	
 	/**
@@ -21,10 +22,10 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularImc(float peso, float altura) 
 	{
-		peso = 81.7f;
-		altura =  1.78f;
+		float imc;
 		
-		return (peso / (altura * altura));
+		imc = (peso / (altura * altura));
+		return imc;
 	}
 	
 	/**
@@ -37,8 +38,8 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) 
 	{	
-		
-		return 0f;
+		float area = (((baseMaior + baseMenor) * altura ) / 2); 
+		return area;
 	}
 	
 	/**
@@ -51,7 +52,11 @@ public class RespostaListaExercicio {
 	 */
 	public static int maiorEntreDoisInteiros(int a, int b) 
 	{
-		return 0;
+		int maiorValor;
+		
+		maiorValor = ( a > b ) ? a : b; 
+		
+		return maiorValor;
 	}
 	
 	/**
@@ -63,7 +68,11 @@ public class RespostaListaExercicio {
 	 */
 	public static boolean verificarParImpar(int numero) 
 	{
-		return false;		
+		boolean boo;
+		
+		boo =  ( numero % 2 == 0) ? true : false; 
+		
+		return boo;		
 	}
 	
 	/**
@@ -73,7 +82,14 @@ public class RespostaListaExercicio {
 	 * @return media
 	 */
 	public static float calcularMediaNotas(float[] notas) {
-		return 0f;
+		float sum = 0;
+		
+		for (float nota : notas) {
+			sum += nota; 
+		}
+		
+		float media = sum / notas.length;
+		return media;
 	}
 	
 	/**
@@ -84,7 +100,13 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirArrayInverso(int[] array)
 	{
-		System.out.print("");
+		for (int i = array.length - 1; i >= 0; i--) {
+			System.out.print(array[i]); 
+			
+			if (i > 0) {
+				System.out.print(", ");
+			}
+		}
 	}
 	
 	/**
@@ -93,11 +115,23 @@ public class RespostaListaExercicio {
 	 * após o último elemento. Utilize System.out.print()
 	 * @param array
 	 */
-	public static void imprimirElementosPrimos(int[] array) 
-	{
-		System.out.print("");
+	public static void imprimirElementosPrimos(int[] array) {
+	    for (int num : array) {
+	        if (num < 2) continue; 
+	        boolean primo = true;
+	        for (int i = 2; i <= Math.sqrt(num); i++) {
+	            if (num % i == 0) {
+	                primo = false;
+	                break;
+	            }
+	        }
+	        if (primo) {
+	            System.out.print(num + " ");
+	        }
+	    }
 	}
-	
+
+
 	
 	/**
 	 * Método deve imprimir os elementos ímpares de um array de inteiros. O formato da impressão 
@@ -107,7 +141,11 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosImpares(int[] array) 
 	{
-		System.out.print("");
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] % 2 != 0) {
+				System.out.print(array[i] + " ");
+			}
+		}
 	}
 	
 	
@@ -119,7 +157,11 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPares(int[] array) 
 	{
-		System.out.print("");
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] % 2 == 0) {
+				System.out.print(array[i] + " ");
+			}
+		}
 	}
 	
 	
